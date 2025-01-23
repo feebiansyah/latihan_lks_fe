@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+  
   useEffect(() => {
     const token = localStorage.getItem("authToken"); // Token biasanya disimpan di localStorage
     if (token) {

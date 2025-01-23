@@ -6,15 +6,16 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
+    
     try {
       const token = localStorage.getItem("authToken");
       if(token){
-        
         await axios.post("http://192.168.100.10:8000/api/v1/auth/logout",
         {},
         {headers: {Authorization: `Bearer ${token}`}}
       );
       }
+
       localStorage.removeItem("authToken");
      
       navigate("/login");
